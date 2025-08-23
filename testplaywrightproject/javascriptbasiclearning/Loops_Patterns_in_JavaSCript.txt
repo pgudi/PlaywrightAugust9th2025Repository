@@ -1,0 +1,327 @@
+
+------------------------------------------------------
+Looping Statements:
+
+If we would do any action again and again , this this case we should prefer looping statements
+
+Types of Looping statements:
+1. for Loop   - > finite looping statement
+2. while Loop   - > infinite looping statement
+3. do ..while Loop  -> - > finite looping statement
+
+for Loop   :
+---------------------
+syntax:
+
+for(intializtion;condition;increment/decrement)
+{
+       <statements>;
+}
+
+Example:
+for(let i=5;i<=10;i++)
+{
+    console.log(i);
+    
+}
+
+If we stretch a for Loop, here is the below example:
+
+
+let i=5
+for(;i<=10;)
+{
+    console.log(i);
+    i++;
+}
+
+Example 2:
+// print numbers in reverse order
+
+for(let i=15;i>=10;i--)
+{
+    console.log(i);
+    
+}
+
+while Loop:
+------------------
+
+Syntax:
+
+intializtion;
+while(condition)
+{
+      statements;
+      increment/decrement;
+}
+
+How it works:
+
+If the condition is true, it enters into the body of while after executing all the statements again it verifies the condition, if it true again it performs same action, in this it executes the body of the loop, till it condition becomes false.
+
+Example1:
+//print numbers from 1 to 10
+
+let i=1
+while(i<=10)
+{
+    console.log(i);
+    i++;
+}
+
+// print numbers in reverse order  from 20 to 10
+
+let i=20
+while(i>=10)
+{
+    console.log(i);
+    i--;
+}
+
+do..while loop:
+----------------------
+Irrespective of condition, it should run body of the loop at least one time.
+
+Syntax:
+initialization;
+do
+{
+     statements;
+}while(condition);
+
+Example:
+// print numbers from 10 to 20
+
+let i=10
+do{
+    console.log(i);
+    i++
+}while(i<=20);
+
+
+// print numbers in reverse order
+
+let i=30
+do{
+    console.log(i);
+    i--
+}while(i>=25)
+
+Loop Control  Statements:
+-------------------------------------------
+JavaScript supports following Loop Control Statements:
+
+1. break
+2. continue
+
+1. break:
+
+if we would like to terminate the whole loop, in this case we should use break statement.
+
+// break statement, example
+
+let i=10
+while(true)
+{
+    console.log(i);
+    if(i==15)
+    {
+        break
+    }
+    i++
+}
+
+2. continue statement:
+if we would like to skip the iterations, then we should use continue statement.
+
+// continue statement example
+
+for(let i=20;i<=40;i++)
+{
+
+    if(i%2==0)
+    {
+        continue
+    }
+    console.log("Odd Numbers :"+i);
+    
+}
+
+Assignments:
+The below assignments should resolved using for, while and do..while loop:
+1. write a program to print even numbers 80 to 40
+2. Write a program to print odd numbers 121 to 81
+3. write a program to display 10th table as follows:
+10 * 1 = 10
+10 * 2 = 20
+10 * 3 = 30
+...............
+..............
+..............
+10 * 10 = 100
+
+4,. Write a program to display the factorial of a given number
+5. write a program to display numbers from 1 to 100 which are divisible by 6?
+6. write a program to display numbers from 200 to 100 in reverse order which are divisible by 11?
+7. write a program to display sum of numbers in between 1 to 10?
+8.  Write a program to find the sum of numbers in between 1 t o100, which are divisible by 3?
+9. Write a program to find the sum of all numbers from result of 8th table?
+    8+16+24+32+40+.......+80 = ?
+10.  write a program to print 15th table  as follows:
+15 * 10 =150
+15 * 9 = 135
+................
+.................
+15 * 1 =15
+
+11. write a program to find the count of numbers in between 40 to 120 , which are divisible by 10
+
+JavaScript Pattern Design: using #  or * etc :
+-----------------------------------------------------------------------
+
+Design the below pattern:
+
+# # # # #
+# # # # #
+# # # # #
+
+/*
+    Design the below pattern:
+
+        # # # # #
+        # # # # #
+        # # # # #
+
+        Make sure how many rows available, in the above example 3 Rows
+        Make sure how many columns available, in the above example 5 columns
+*/
+
+let pattern=""
+for(let i=1;i<=3;i++)
+{
+    for(let j=1;j<=5;j++)
+    {
+        pattern=pattern+"# "
+            
+    }
+    pattern=pattern+"\n"
+}
+
+console.log(pattern);
+
+
+/*
+    Design the below pattern:
+
+        1
+        1 2
+        1 2 3
+        1 2 3 4
+        1 2 3 4 5
+
+        Make sure how many rows available, in the above example 5 Rows
+        Make sure how many columns available, 1st row 1 column
+        2nd row 2 columns
+        3rd row 3 columns
+        4th row 4 columns
+        5th row 5 columns
+*/
+let pattern=""
+for(let i=1;i<=5;i++)
+{
+    for(let j=1;j<=i;j++)
+    {
+        pattern=pattern+j+" "
+        
+    }
+    pattern=pattern+"\n"
+}
+console.log(pattern);
+    
+
+Assignments on Pattern Design Programs:
+
+1)
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2
+1
+
+2) 
+1
+1 1
+1 1 1
+1 1 1 1
+1 1 1 1 1 
+
+3)
+A
+B C
+D E F
+G H I J
+K L M N O
+
+4)
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+
+5)
+1
+2 2
+3 3 3 
+4 4 4 4
+5 5 5 5 5
+
+6)
+5 5 5 5 5
+5 5 5 5
+5 5 5
+5 5
+5
+
+7)
+
+1 
+3 5
+7 9 11
+13 15 17 19 
+21 23 25 27 29
+
+8)
+* * *
+* * *
+* * *
+* * *
+* * *
+* * *
+* * *
+* * *
+* * *
+* * *
+
+
+
+Ternary Operator:
+
+If condition is true, it prints first statement, otherwise it print second statement
+
+// Ternary operator Example
+let age=12;
+
+(age >= 18) ? console.log("Eligible for Voting") : console.log("Not Eligible for Voting")
+
+
+
+
+
+
+
+
+
+
+
