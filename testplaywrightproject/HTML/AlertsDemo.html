@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Alers</title>
+    <script>
+        function simpleAlert(){
+        alert("It is a Simple JavaScript Alert")
+    }
+
+    function confirmalert(){
+        let val=confirm("Are you sure you want delete this User?")
+        console.log("The Click Operation :"+val)
+    }
+
+    function promptAlert(){
+        let val=prompt("Please Enter you Native Place Name :")
+        console.log("The Value :"+val);
+        
+    }
+    </script>
+</head>
+<body>
+    
+    <p>This web Page Describes the Types of Alerts available in JaavScriprt</p>
+    <button onclick="simpleAlert()">Simple Alert</button>  <br><br>
+    <button onclick="confirmalert()">Confirm Alert</button>  <br><br>
+    <button onclick="promptAlert()">Prompt Alert</button>  <br><br>
+
+    
+</body>
+</html>
