@@ -24,6 +24,6 @@ test('Login Actitime Application', async({page})=>{
     await page.locator("//a[@id='logoutLink']").click()
     //Validation in Login Page
     await expect(page).toHaveURL("http://localhost/login.do")
-    await expect(page).toHaveTitle("actiTIME - Login")
+    await expect(page).toHaveTitle("actiTIME - Login123")
 })
 

@@ -8,6 +8,4 @@ test('Navigate URL of the Application', async({page})=>{
 
     const url = await page.url()
     console.log("URL of Application :"+url);
-    
-    
 })
