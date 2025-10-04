@@ -1,0 +1,10 @@
+{
+    "user1":{
+        "fname":"Santosh",
+        "course":"Medical"
+    },
+    "user2":{
+        "fname":"vinith",
+        "course":"Computer Science"
+    }
+}
