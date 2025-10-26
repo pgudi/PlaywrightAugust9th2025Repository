@@ -1,4 +1,3 @@
-
 @Execute
 Feature: Verify Create User Functionality
   Scenario: Verify Create User Functionality

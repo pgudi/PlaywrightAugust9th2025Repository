@@ -1,0 +1,467 @@
+JavaScript Objects:
+---------------------------
+
+/*
+    How to create Objects and 
+    How to read values from Object
+*/
+Case 1: How to create object and How to read values
+
+let student = {
+    "firstname":"Santosh",
+    "course":"Research and Science",
+    "age":22
+}
+
+console.log(student.firstname);
+console.log(student.course);
+console.log(student.age);
+
+console.log(student["firstname"]);
+console.log(student["course"]);
+console.log(student["age"]);
+
+Case 2: How to add New Key and Value in to Object
+/*
+    How to add new Key and value into existing object
+*/
+
+let student = {
+    "firstname":"Santosh",
+    "course":"Research and Science",
+    "age":22
+}
+
+student.cityname="Dallas"
+
+console.log(student.cityname)
+console.log(student["cityname"]);
+
+Case 3: How to delete/ remove a particular key and value
+/*
+    How to delete / remove key from the existing object
+*/
+
+let student = {
+    "firstname":"Santosh",
+    "course":"Research and Science",
+    "age":22
+}
+
+student.cityname="Dallas"
+console.log(student.cityname)
+console.log(student["cityname"]);
+
+//Delete teh particualr Key
+delete student.cityname;
+//Read value based on key
+console.log(student.cityname)
+
+Case 4: Read Key and value pair from object
+
+/*
+    Read Key and value pair from javascript objects
+*/
+let student = {
+    "firstname":"Santosh",
+    "course":"Research and Science",
+    "age":22,
+    "cityname":"California"
+}
+
+//Read values
+for(let x in student)
+{
+    console.log(x +"  -> "+ student[x]);
+    
+}
+
+Case 5: JavaScript Array of Objects
+
+/*
+    Array of JavaScript Objects
+*/
+let students = [
+    {
+    "firstname":"Santosh",
+    "course":"Research and Science",
+    "age":22,
+    "cityname":"California"
+    },
+    {
+    "firstname":"Vinith",
+    "course":"Computer Science",
+    "age":25,
+    "cityname":"New York"
+    }
+]
+
+//Read Values
+console.log(students[0].firstname);
+console.log(students[0].course);
+console.log(students[0].cityname);
+console.log(students[0].age);
+
+console.log(students[1].firstname);
+console.log(students[1].course);
+console.log(students[1].cityname);
+console.log(students[1].age);
+
+
+Case 6: Nested JavaScript Objects
+
+/*
+    Nested of JavaScript Objects
+*/
+
+let students ={
+    "santu": {
+        "firstname":"Santosh",
+        "course":"Research and Science",
+        "age":22,
+        "cityname":"California"
+    },
+
+    "vinu":{
+        "firstname":"Vinith",
+        "course":"Computer Science",
+        "age":25,
+        "cityname":"New York"
+    }
+}
+
+//Read Values
+console.log(students.santu.firstname);
+console.log(students.santu.console);
+console.log(students.santu.age);
+console.log(students.santu.cityname);
+
+console.log(students.vinu.firstname);
+console.log(students.vinu.console);
+console.log(students.vinu.age);
+console.log(students.vinu.cityname);
+
+Case 7: Functions in JavaScript Objects and how to executes functions which are available in JavaScript Objects
+
+
+/*
+    How to write functions in JavaScript Objects
+    and How to Execute Those Functions which are available in JavaScript Objects
+*/
+let employee={
+    "empid": 1001,
+    "empname":"Santosh",
+    "jobname":"Manager",
+    "salary": 50000,
+    "bonus": function ()
+            {
+                return (this.salary * 5/100);
+            },
+    "commission": function ()
+                {
+                    return (this.salary * 10/100);
+                },
+    "fullsalary": function ()
+                  {
+                     console.log("Full Salary :"+(this.salary + this.bonus() + this.commission()));
+                     
+                  }
+}
+
+// Read Values based on key
+console.log(employee.empid);
+console.log(employee.empname);
+console.log(employee.jobname);
+console.log(employee.salary);
+console.log(employee.bonus());
+console.log(employee.commission());
+employee.fullsalary()
+
+Case 8: Functions in JavaScript Objects , the function which do not return value
+/*
+    Functions in JavaScript Objects , the function which do not return value
+
+*/
+
+let basicmaths = {
+    "sumofnumbers": function()
+                    {
+                        let sum=0
+                        for(let i=1;i<=10;i++){
+                            sum=sum+i;
+                        }
+                        console.log("Sum of All Numbers :"+sum);
+                        
+                    },
+    "factorialofnum" : function ()
+                    {
+                        let fact=1
+                        let num=5
+                        for(let i=num;i>=1;i--){
+                            fact=fact * i;
+                        }
+                        console.log("Factorial of "+num+" is "+fact);
+                        
+                    }
+}
+
+basicmaths.sumofnumbers()
+basicmaths.factorialofnum()
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Classes in JavaScript:
+
+case 1: how to define class, and How to declare variables in class and How to execute them
+
+class Person
+{
+    firstName = "Santosh";
+    jobname = "Scientist";
+    age = 22;
+}
+
+let o = new Person()
+console.log(o.firstName);
+console.log(o.jobname);
+console.log(o.age);
+
+Case 2: How to declare variables in class using setter ?
+/*
+    declare a class and declare variables using setter and execute them
+*/
+class Person
+{
+    setfirstName(){
+        return "Santosh"
+    }
+
+    setJobName(){
+        return "Senior Manager"
+    }
+
+    setAge(){
+        return 22;
+    }
+}
+
+let o = new Person()
+console.log(o.setfirstName());
+console.log(o.setJobName());
+console.log(o.setAge());
+
+case 3: How to write functions [No Parameters] in JavaScript class and How to execute them?
+/*
+    How to write functions in JavaScript Class
+    These function do not have parameters
+    How to execute Functions from Class
+*/
+
+class Maths
+{
+    addition(){
+        let x,y;
+        x=40;y=30;
+        console.log("Addition Result :"+(x + y));
+        
+    }
+
+    multiplication(){
+        let x,y;
+        x=12;y=15;
+        console.log("Multiplication Result :"+(x * y));
+        
+    }
+}
+
+let o1=new Maths();
+o1.addition()
+o1.multiplication()
+
+let o2=new Maths();
+o2.addition()
+o2.multiplication()
+
+Case 4:  How to write parametrized functions  in JavaScript class and How to execute them?
+
+/*
+    Functions with parameters in JavaScript Class
+*/
+class Maths{
+    addition(x, y){
+        console.log("Addition Result :"+(x + y));
+        
+    }
+
+    multiplication(a,b){
+        let result= (a * b);
+        console.log("Multiplication Result :"+result);
+        
+    }
+}
+
+let o1=new Maths();
+o1.addition(30,40)
+o1.multiplication(12, 10)
+
+o1.addition(100,50)
+o1.multiplication(20,15)
+
+Case 5: How to declare instance variables in class and How to write and execute with No-args constructor
+
+/*
+    How to create/declare instance variabels in a class /
+    How to write a No-args constructor in a class
+*/
+class Product
+{
+    constructor(){
+        this.prodid=101;
+        this.prodname="Levovo Laptop";
+        this.price = 45000;
+    }
+}
+
+let o=new Product()
+console.log("Product Id :"+o.prodid);
+console.log("Product Name :"+o.prodname);
+console.log("Product Price :"+o.price);
+
+Case 6:  Parametrized Constructor in JavaScript Class:
+
+/*
+    How to create/declare instance variabels in a class /
+    How to write a No-args constructor in a class
+*/
+class Product
+{
+    constructor(id, pname, price){
+        this.prodid=id;
+        this.prodname=pname;
+        this.price = price;
+    }
+}
+
+let o=new Product(102, "Dell Keyboard", 1750)
+console.log("Product Id :"+o.prodid);
+console.log("Product Name :"+o.prodname);
+console.log("Product Price :"+o.price);
+
+Case 7: How to Export a Class and How to import a Class:
+
+/*
+   How to Export a Class
+*/
+class Employee{
+
+    constructor(eid,ename,job,sal)
+    {
+        this.eid=eid;
+        this.ename=ename;
+        this.job=job;
+        this.sal=sal;
+    }
+
+    getEmployeeId()
+    {
+        console.log("the Employee Id :"+this.eid)
+    }
+
+    getEmployeeName()
+    {
+        console.log("the Employee Name :"+this.ename)
+    }
+
+    getEmployeeJob(){
+        console.log("the Employee Job :"+this.job)
+    }
+
+    getEmployeeSalary(){
+        console.log("the Employee Salary :"+this.sal)
+    }
+}
+
+module.exports = {Employee}
+
+/*
+    import the class Employee
+*/
+
+ const {Employee} = require('./exportclassdemo')
+
+ //Create object or instance for this class
+ let o = new Employee(101, "Santosh","Project Manager", 55000)
+
+ o.getEmployeeId()
+ o.getEmployeeName()
+ o.getEmployeeJob()
+ o.getEmployeeSalary()
+
+Case 8: How to Export and Import a Class Which has Basic or Generic Array Functions
+
+/*
+     Export A class Which has Basic or Generic Array Functions
+*/
+
+class SingleDimensionalArray
+{
+    readFirstHalfOfElements(arr)
+    {
+        for(let i=0;i<arr.length/2;i++)
+        {
+            console.log(arr[i]);
+            
+        }
+    }
+
+    readSecondHalfOfElements(arr)
+    {
+        for(let i=arr.length/2;i<arr.length;i++)
+        {
+            console.log(arr[i]);
+            
+        }
+    }
+
+    readFirstHalfOfElementsInReverse(arr)
+    {
+        for(let i=arr.length/2-1;i>=0;i--)
+        {
+            console.log(arr[i]);
+            
+        }
+    }
+
+    readSecondHalfOfElementsInReverse(arr)
+    {
+        for(let i=arr.length-1;i>=arr.length/2;i--)
+        {
+            console.log(arr[i]); 
+        }
+    }
+}
+
+module.exports = {SingleDimensionalArray}
+
+/*
+    Import A class Which has Basic or Generic Array Functions
+*/
+
+const {SingleDimensionalArray} = require('./exportarrayfunctionclass')
+
+let o = new SingleDimensionalArray()
+
+let a = [10,20,30,40,50,60]
+o.readFirstHalfOfElements(a)
+console.log("-------------");
+o.readSecondHalfOfElements(a)
+console.log("-------------");
+o.readFirstHalfOfElementsInReverse(a)
+console.log("-------------");
+o.readSecondHalfOfElementsInReverse(a)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+
+
+
+

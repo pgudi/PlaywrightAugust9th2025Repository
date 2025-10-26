@@ -27,7 +27,7 @@ test('Display All Products Titles from Products API', async({request})=>{
  
 })
 
-test.only('Sum of Prices of All Products from Products API', async({request})=>{
+test('Sum of Prices of All Products from Products API', async({request})=>{
     console.log("Sum of Prices of All Products from Products API");
     
     const response = await request.get('https://fakestoreapi.com/products')

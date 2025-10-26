@@ -1,0 +1,2 @@
+Alert Content :I am a JS prompt
+Prompt Result :You entered: S G Software Testing Institute

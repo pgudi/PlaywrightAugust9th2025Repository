@@ -1,0 +1,218 @@
+String Operations in JavaScript:
+--------------------------------------------
+/*
+    How to create String  in javascript
+*/
+
+//1st Approach
+
+let s1="Welcome"
+console.log(s1);
+
+console.log(typeof(s1));
+
+//2nd Approach
+
+let s2=new String("Program")
+console.log(s2);
+console.log(s2.toString());
+
+-----------------------------------------------------------
+/*
+    String in javascript is immutable
+    for each modification on String object, it creates saparate objects in memory
+*/
+let s="JavaScript"
+console.log(s);
+s.concat(" Programming")
+console.log(s);
+s.concat(" Language")
+console.log(s);
+
+Output:
+JavaScript
+JavaScript
+JavaScript
+
+----------------------------------------------------------------
+String in-built Functions:
+
+/*
+    String in built Function Part -01
+*/
+// Convert to lowercase
+let s1="WELCOME"
+let s2=s1.toLowerCase();
+console.log(s2);
+
+// convert to Uppercase
+let s3="programming";
+let s4=s3.toUpperCase()
+console.log(s4);
+
+// concatenation of String
+let s5="Good Morning"
+let s6=s5.concat(" Friends!!!")
+console.log(s6);
+
+Output:
+welcome
+PROGRAMMING
+Good Morning Friends!!!
+
+/*
+    String in built Function Part -02
+*/
+
+//extract one character at a time based on index
+
+let s1="WELCOME"
+let s2=s1.charAt(0)
+console.log(s2);
+let s3=s1.charAt(5)
+console.log(s3);
+
+// Extract sub string
+let s4="Programming"
+let s5=s4.substring(3,7)
+console.log(s5);
+
+Output:
+W
+M
+gram
+
+
+/*
+    String in built Function Part -03
+*/
+// partial Matching of String
+let s1="Bangalore is garden city of karnataka"
+let v1=s1.startsWith("Bangalore")
+console.log(v1);
+
+let v2=s1.endsWith("karnataka")
+console.log(v2);
+
+let v3=s1.includes("garden123")
+console.log(v3);
+
+//Compare String1 and String2
+let s2="JavaScript"
+let s3="JAVASCRIPT"
+let v4=s2.localeCompare(s3)
+console.log(v4);
+
+let s4="JAVASCRIPT"
+let s5="JAVASCRIPT"
+let v5=s4.localeCompare(s5)
+console.log(v5);
+
+Output:
+true
+true
+false
+-1
+0
+
+/*
+    String in built Function Part -04
+*/
+
+//find position of String from left to Right
+let s1="It is a book, It is on table"
+let x1=s1.indexOf("is",0)
+console.log(x1)
+
+let x2=s1.indexOf("It")
+console.log(x2);
+
+// find position from Right to Left
+let x3=s1.lastIndexOf("is",15)
+console.log(x3);
+let x4=s1.lastIndexOf("is")
+console.log(x4);
+
+//repeat of the string
+let s2="Welcome"
+let s3=s2.repeat(5)
+console.log(s3);
+
+//padStart  padding at left handside
+let s4="Good Morning"
+let s5=s4.padStart(20,"#")
+console.log(s5);
+
+//padEnd, padding at right handside
+let s6=s4.padEnd(20,'#')
+console.log(s6);
+
+Output:
+3
+0
+3
+17
+WelcomeWelcomeWelcomeWelcomeWelcome
+########Good Morning
+Good Morning########
+
+/*
+    String in built Function Part -05
+*/
+
+//repalce function
+let s1="It is a new palace"
+let s2=s1.replace("is","was")
+console.log(s2);
+
+// split function, It returns an array, IT takes space as delimiter
+let s3="Apple,Mango,Banana,Orange,Grapes"
+let s4=s3.split(",")
+console.log(s4);
+
+// length function
+let s5="Welcome"
+let v1=s5.length
+console.log(v1);
+
+// trim function , it remove space on both sides
+let s6="   Program   "
+let v2=s6.length
+console.log("Before trim, length of String :"+v2);
+let s7=s6.trim()
+console.log("After trim, length of String :"+s7.length);
+
+// trimStart, it trims at left hand side only
+let s8="   Program   "
+console.log("Before trimStart, length of String :"+s8.length);
+let s9=s8.trimStart()
+console.log("After trimStart, length of String :"+s9.length);
+
+// trimEnd, it trims at right hand side only
+let s10="     Program     "
+console.log("Before trimEnd, length of String :"+s10.length);
+let s11=s10.trimStart()
+console.log("After trimEnd, length of String :"+s11.length);
+
+//valueOf, convert other datatype with String
+let x1=340
+console.log(typeof(x1));
+
+let s12=""
+console.log( typeof(s12.valueOf(x1)));
+
+Output:
+It was a new palace
+[ 'Apple', 'Mango', 'Banana', 'Orange', 'Grapes' ]
+7
+Before trim, length of String :13
+After trim, length of String :7
+Before trimStart, length of String :13
+After trimStart, length of String :10
+Before trimEnd, length of String :17
+After trimEnd, length of String :12
+number
+string
+
+
+

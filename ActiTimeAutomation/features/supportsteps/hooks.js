@@ -1,8 +1,9 @@
-const {BeforeAll, AfterAll, Before, After} = require('@cucumber/cucumber')
+const {BeforeAll, AfterAll, Before, After, BeforeStep, AfterStep, Status, setDefaultTimeout} = require('@cucumber/cucumber')
 const { chromium } = require('playwright');
 const {LoginPage} = require('./../../pages/loginpage')
 const {HomePage} = require('./../../pages/homepage')
 const {UserPage} = require("./../../pages/userpage")
+setDefaultTimeout(30000)
 
 let browser,context,page
 Before( async function(){
@@ -17,5 +18,13 @@ Before( async function(){
 })
 
 After(async function(){
-    await this.page.close()
+   //  await this.page.close()
+})
+
+AfterStep(async function({result}){
+   if(result.status===Status.PASSED)
+   {
+      const screenshot = await this.page.screenshot({ fullPage: true })
+      this.attach(screenshot, 'image/png')
+   }
 })

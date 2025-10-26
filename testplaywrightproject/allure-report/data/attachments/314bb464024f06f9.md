@@ -1,0 +1,78 @@
+# Page snapshot
+
+```yaml
+- table:
+  - rowgroup:
+    - 'row "Please identify yourself To login for the first time use the following username and password: Username: admin Password: manager It is strongly recommended to change the default password to keep your data secure. Keep me logged in Login actiTIME 2017.4 (View License) © actiTIME Inc."':
+      - 'cell "Please identify yourself To login for the first time use the following username and password: Username: admin Password: manager It is strongly recommended to change the default password to keep your data secure. Keep me logged in Login actiTIME 2017.4 (View License) © actiTIME Inc."':
+        - table:
+          - rowgroup:
+            - 'row "Please identify yourself To login for the first time use the following username and password: Username: admin Password: manager It is strongly recommended to change the default password to keep your data secure. Keep me logged in Login"':
+              - 'cell "Please identify yourself To login for the first time use the following username and password: Username: admin Password: manager It is strongly recommended to change the default password to keep your data secure. Keep me logged in Login"':
+                - table:
+                  - rowgroup:
+                    - 'row "Please identify yourself To login for the first time use the following username and password: Username: admin Password: manager It is strongly recommended to change the default password to keep your data secure. Keep me logged in Login"':
+                      - cell:
+                        - img
+                        - img
+                      - 'cell "Please identify yourself To login for the first time use the following username and password: Username: admin Password: manager It is strongly recommended to change the default password to keep your data secure. Keep me logged in Login"':
+                        - table:
+                          - rowgroup:
+                            - row "Please identify yourself":
+                              - cell "Please identify yourself"
+                            - 'row "To login for the first time use the following username and password: Username: admin Password: manager It is strongly recommended to change the default password to keep your data secure."':
+                              - 'cell "To login for the first time use the following username and password: Username: admin Password: manager It is strongly recommended to change the default password to keep your data secure."':
+                                - paragraph: "To login for the first time use the following username and password:"
+                                - paragraph: "Username: admin"
+                                - paragraph: "Password: manager"
+                                - table:
+                                  - rowgroup:
+                                    - row "It is strongly recommended to change the default password to keep your data secure.":
+                                      - cell:
+                                        - img
+                                      - cell "It is strongly recommended to change the default password to keep your data secure."
+                            - row
+                            - row
+                            - row "Keep me logged in Login":
+                              - cell "Keep me logged in Login":
+                                - table:
+                                  - rowgroup:
+                                    - row:
+                                      - cell:
+                                        - table:
+                                          - rowgroup:
+                                            - row:
+                                              - cell:
+                                                - textbox "Username"
+                                            - row:
+                                              - cell:
+                                                - textbox "Password"
+                                    - row "Keep me logged in Login":
+                                      - cell "Keep me logged in Login":
+                                        - table:
+                                          - rowgroup:
+                                            - row "Keep me logged in Login":
+                                              - cell "Keep me logged in":
+                                                - checkbox "Keep me logged in"
+                                              - cell "Keep me logged in"
+                                              - cell "Login":
+                                                - link "Login":
+                                                  - /url: javascript:void(0)
+                            - row
+                      - cell
+            - row "actiTIME 2017.4 (View License) © actiTIME Inc.":
+              - cell "actiTIME 2017.4 (View License) © actiTIME Inc.":
+                - table:
+                  - rowgroup:
+                    - row "actiTIME 2017.4 (View License) © actiTIME Inc.":
+                      - cell "actiTIME 2017.4"
+                      - cell "(View License)":
+                        - text: (
+                        - link "View License":
+                          - /url: javascript:void(0)
+                        - text: )
+                      - cell "© actiTIME Inc.":
+                        - text: ©
+                        - link "actiTIME Inc.":
+                          - /url: http://www.actitime.com
+```
