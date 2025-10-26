@@ -1,0 +1,269 @@
+# Page snapshot
+
+```yaml
+- img
+- text: Getting Started Shortcuts
+- table:
+  - rowgroup:
+    - row "TIME-TRACK TASKS REPORTS USERS Administrator System Administrator, actiTIME has password recovery function, but you cannot use it as your email address is not configured. | Logout Warning! Password recovery function is disabled as email settings are not configured. Settings Add-ons Help Tips":
+      - cell:
+        - img
+        - img
+      - cell "TIME-TRACK":
+        - link "TIME-TRACK":
+          - /url: /user/submit_tt.do
+      - cell "TASKS":
+        - link "TASKS":
+          - /url: /tasks/tasklist.do
+      - cell "REPORTS":
+        - link "REPORTS":
+          - /url: /reports/reports.do
+      - cell "USERS"
+      - cell "Administrator System Administrator, actiTIME has password recovery function, but you cannot use it as your email address is not configured. | Logout Warning! Password recovery function is disabled as email settings are not configured. Settings Add-ons Help Tips":
+        - table:
+          - rowgroup:
+            - row "Administrator System Administrator, actiTIME has password recovery function, but you cannot use it as your email address is not configured. | Logout Warning! Password recovery function is disabled as email settings are not configured. Settings Add-ons Help Tips":
+              - cell
+              - cell "Administrator System Administrator, actiTIME has password recovery function, but you cannot use it as your email address is not configured. | Logout Warning! Password recovery function is disabled as email settings are not configured. Settings Add-ons Help Tips":
+                - table:
+                  - rowgroup:
+                    - row "Administrator System Administrator, actiTIME has password recovery function, but you cannot use it as your email address is not configured. | Logout":
+                      - cell "Administrator System Administrator, actiTIME has password recovery function, but you cannot use it as your email address is not configured.":
+                        - link "Administrator System":
+                          - /url: javascript:void(0)
+                        - link "Administrator, actiTIME has password recovery function, but you cannot use it as your email address is not configured.":
+                          - /url: javascript:void(0)
+                          - img "Administrator, actiTIME has password recovery function, but you cannot use it as your email address is not configured."
+                      - cell "|"
+                      - cell "Logout":
+                        - link "Logout":
+                          - /url: /logout.do
+                    - row "Warning! Password recovery function is disabled as email settings are not configured. Settings Add-ons Help Tips":
+                      - cell "Warning! Password recovery function is disabled as email settings are not configured. Settings Add-ons Help Tips": Settings Add-ons Help Tips
+    - row "User List":
+      - cell
+      - cell "User List"
+      - cell
+- table:
+  - rowgroup:
+    - row "User List 4 accounts left":
+      - cell "User List"
+      - cell
+      - cell "4 accounts left"
+    - row "Add User Time Zone Groups":
+      - cell
+      - cell "Add User Time Zone Groups":
+        - text: Add User Time Zone Groups
+        - img
+    - row:
+      - cell
+    - 'row "All Users Sort by: User Time Zone Task Hierarchy Time-Track Show disabled accounts Manage Modify System, Administrator Default Time Zone Group All users"':
+      - 'cell "All Users Sort by: User Time Zone Task Hierarchy Time-Track Show disabled accounts Manage Modify System, Administrator Default Time Zone Group All users"':
+        - table:
+          - rowgroup:
+            - 'row "All Users Sort by: User Time Zone Task Hierarchy Time-Track"':
+              - 'cell "All Users Sort by: User Time Zone"':
+                - table:
+                  - rowgroup:
+                    - 'row "All Users Sort by: User Time Zone"':
+                      - cell "All Users":
+                        - table:
+                          - rowgroup:
+                            - row
+                            - row "All Users":
+                              - cell "All Users"
+                              - cell
+                              - cell
+                            - row
+                      - 'cell "Sort by: User Time Zone"'
+              - cell "Task Hierarchy":
+                - table:
+                  - rowgroup:
+                    - row:
+                      - cell
+                      - cell
+                - text: Task Hierarchy
+              - cell "Time-Track"
+            - row "Show disabled accounts Manage Modify":
+              - cell "Show disabled accounts":
+                - table:
+                  - rowgroup:
+                    - row "Show disabled accounts":
+                      - cell:
+                        - table:
+                          - rowgroup:
+                            - row:
+                              - cell:
+                                - textbox "Start typing name"
+                              - cell
+                      - cell "Show disabled accounts":
+                        - checkbox "Show disabled accounts" [checked]
+                        - text: Show disabled accounts
+              - cell "Manage"
+              - cell "Modify"
+          - rowgroup:
+            - row "System, Administrator Default Time Zone Group All users":
+              - cell "System, Administrator Default Time Zone Group":
+                - table:
+                  - rowgroup:
+                    - row "System, Administrator Default Time Zone Group":
+                      - cell "System, Administrator Default Time Zone Group"
+              - cell:
+                - table:
+                  - rowgroup:
+                    - row:
+                      - cell
+                      - cell
+              - cell
+              - cell "All users"
+- table:
+  - rowgroup:
+    - 'row "Add User: User1, demo"':
+      - 'cell "Add User: User1, demo"':
+        - textbox "Copy Settings from..."
+        - img
+        - text: "Add User: User1, demo"
+- text: Account Information
+- textbox "First Name": demo
+- textbox "MI"
+- textbox "Last Name": User1
+- textbox "Email": demo@gmail.com
+- text: "Login Details:"
+- textbox "Username": demoUser1
+- textbox "Password": WelcomeOne
+- textbox "Retype Password": WelcomeOne
+- text: "Time Zone Group:"
+- table:
+  - rowgroup:
+    - row "GMT -5:00 Default Time Zone Group":
+      - cell "GMT -5:00 Default Time Zone Group":
+        - emphasis:
+          - button "GMT -5:00 Default Time Zone Group"
+      - cell
+- text: "Hire Date:"
+- table:
+  - rowgroup:
+    - row "Oct 18, 2025":
+      - cell "Oct 18, 2025":
+        - emphasis:
+          - button "Oct 18, 2025"
+      - cell
+- text: Work Schedule
+- table:
+  - rowgroup:
+    - row "Mon Tue Wed Thu Fri Sat Sun":
+      - cell
+      - cell "Mon Tue Wed Thu Fri Sat Sun":
+        - table:
+          - rowgroup:
+            - row "Mon Tue Wed Thu Fri Sat Sun":
+              - cell "Mon"
+              - cell "Tue"
+              - cell "Wed"
+              - cell "Thu"
+              - cell "Fri"
+              - cell "Sat"
+              - cell "Sun"
+      - cell
+      - cell
+      - cell
+  - rowgroup:
+    - 'row "Working Schedule: 8 8 8 8 8 0 0 40:00 Use corporate settings"':
+      - cell "Working Schedule:"
+      - cell "8 8 8 8 8 0 0":
+        - table:
+          - rowgroup:
+            - row "8 8 8 8 8 0 0":
+              - cell "8":
+                - textbox [disabled]: "8"
+              - cell "8":
+                - textbox [disabled]: "8"
+              - cell "8":
+                - textbox [disabled]: "8"
+              - cell "8":
+                - textbox [disabled]: "8"
+              - cell "8":
+                - textbox [disabled]: "8"
+              - cell "0":
+                - textbox [disabled]: "0"
+              - cell "0":
+                - textbox [disabled]: "0"
+      - cell "40:00"
+      - cell "Use corporate settings":
+        - table:
+          - rowgroup:
+            - row "Use corporate settings":
+              - cell "Use corporate settings":
+                - checkbox "Use corporate settings" [checked]
+              - cell "Use corporate settings"
+- text: Permissions
+- link "Apply template":
+  - /url: javascript:void(0);
+- table:
+  - rowgroup:
+    - row "Time-Track Submission Enter Time-Track Modify Time-Track of Other Users Hierarchy Levels Management Manage Customers & Projects Manage Tasks":
+      - cell "Time-Track Submission Enter Time-Track Modify Time-Track of Other Users":
+        - table:
+          - rowgroup:
+            - row "Time-Track Submission":
+              - cell "Time-Track Submission"
+            - row "Enter Time-Track":
+              - cell "Enter Time-Track":
+                - checkbox "Enter Time-Track" [checked]
+              - cell "Enter Time-Track"
+            - row "Modify Time-Track of Other Users":
+              - cell "Modify Time-Track of Other Users":
+                - checkbox "Modify Time-Track of Other Users" [checked]
+              - cell "Modify Time-Track of Other Users"
+      - cell "Hierarchy Levels Management Manage Customers & Projects Manage Tasks":
+        - table:
+          - rowgroup:
+            - row "Hierarchy Levels Management":
+              - cell "Hierarchy Levels Management"
+            - row "Manage Customers & Projects":
+              - cell "Manage Customers & Projects":
+                - checkbox "Manage Customers & Projects" [checked]
+              - cell "Manage Customers & Projects"
+            - row "Manage Tasks":
+              - cell "Manage Tasks":
+                - checkbox "Manage Tasks" [checked]
+              - cell "Manage Tasks"
+    - row "Reporting Generate Time Reports Staff Performance Report, Time Balance & Overtime Report Generate Billing Reports Billing Summary Report User Management & Settings Manage Accounts & Permissions Manage System Settings Turn Features On / Off, Types of Work, Work Schedule, General Settings, Logo & Color Scheme, Licenses":
+      - cell "Reporting Generate Time Reports Staff Performance Report, Time Balance & Overtime Report Generate Billing Reports Billing Summary Report":
+        - table:
+          - rowgroup:
+            - row "Reporting":
+              - cell "Reporting"
+            - row "Generate Time Reports Staff Performance Report, Time Balance & Overtime Report":
+              - cell "Generate Time Reports":
+                - checkbox "Generate Time Reports" [checked]
+              - cell "Generate Time Reports Staff Performance Report, Time Balance & Overtime Report":
+                - text: Generate Time Reports
+                - img "Staff Performance Report, Time Balance & Overtime Report"
+            - row "Generate Billing Reports Billing Summary Report":
+              - cell "Generate Billing Reports":
+                - checkbox "Generate Billing Reports" [checked]
+              - cell "Generate Billing Reports Billing Summary Report":
+                - text: Generate Billing Reports
+                - img "Billing Summary Report"
+      - cell "User Management & Settings Manage Accounts & Permissions Manage System Settings Turn Features On / Off, Types of Work, Work Schedule, General Settings, Logo & Color Scheme, Licenses":
+        - table:
+          - rowgroup:
+            - row "User Management & Settings":
+              - cell "User Management & Settings"
+            - row "Manage Accounts & Permissions":
+              - cell "Manage Accounts & Permissions":
+                - checkbox "Manage Accounts & Permissions" [checked]
+              - cell "Manage Accounts & Permissions"
+            - row "Manage System Settings Turn Features On / Off, Types of Work, Work Schedule, General Settings, Logo & Color Scheme, Licenses":
+              - cell "Manage System Settings":
+                - checkbox "Manage System Settings" [checked]
+              - cell "Manage System Settings Turn Features On / Off, Types of Work, Work Schedule, General Settings, Logo & Color Scheme, Licenses":
+                - text: Manage System Settings
+                - img "Turn Features On / Off, Types of Work, Work Schedule, General Settings, Logo & Color Scheme, Licenses"
+- table:
+  - rowgroup:
+    - row "Create User Cancel":
+      - cell "Create User Cancel"
+- paragraph
+```

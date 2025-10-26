@@ -1,0 +1,335 @@
+/*
+     find the sum of numbers in between 1 to 10
+     1+2+3+4+5+6+7+8+9+10 = 55
+
+     Step 1: make sure whether , can i print numbers 1 to 10
+     Step 2: whether should i have idea on arithmetic assignment operator
+     Step 3: perform sum of all the numbers and display the result
+*/
+
+let sum=0;
+for(let i=1;i<=10;i++){
+    sum=sum+i;  
+}
+console.log(sum);
+--------------------------------------------------
+/*
+   find count of numbers in between 20 to 60, which are divisiable by 4
+   Step 1: make sure whether can i print numbers 20 to 60
+   Step 2: in between numbers 20 to 60, print numbers which are divisiable by 4
+   Step 3: find the count of numbers [Arithmetic Assignment oeprators]
+*/
+let count=0
+for(let i=20;i<=60;i++){
+    
+    if(i % 4 == 0){
+       count=count+1
+    }
+    
+}
+console.log("Count of numbers :"+count);
+------------------------------------------------------------------
+/*
+    0 1 1 2 3 5 8 13 21 34 55 89
+
+    fn=0; sn=1;
+    tn=fn + sn
+    fourth= sn + tn
+    fifth= tn + fourth
+    sixth = fourth + fifth
+*/
+
+let fn,sn;
+fn=0; sn=1;
+console.log(fn+" ")
+console.log(sn+" ");
+
+for(let i=1;i<=8;i++)
+{
+    let tn=(fn+sn)
+    fn=sn
+    sn=tn
+
+    console.log(tn);
+    
+}
+--------------------------------------------------------------------------
+
+/*
+   The number which is divisable by 1 and itself, is called as Prime Numbers
+    12
+    2 3 4 5 6 7 8 9 10 11
+
+    The given is divisiable by each number, if it divided by any one number, then
+    it is not a prime number,
+*/
+let num=12
+let flag = 0
+for(let i=2;i<=12;i++)
+{
+    if(num % i ==0)
+    {
+        flag = flag + 1
+        break;
+    }
+}
+if(flag == 0){
+        console.log(num+ " is a Prime Number");
+        
+    }else {
+        console.log(num+ " is not a Prime Number");
+    }
+--------------------------------------------------------------------------------
+
+Arrays in JavaScript:
+--------------------------------
+
+Array is used to store the value, In array index always start with zero , Array can store elements based on index, index always start here. An array can store size-1 elements.
+
+/*
+case 1:
+    How to declare an array , How to assign Elements in to an array,
+    How to read elements from an array
+*/
+//declare an Array
+let fruits = []
+
+// Assign elements
+fruits[0]="Mango"
+fruits[1]="Apple"
+fruits[2]="Banana"
+fruits[3]="Orange"
+
+//Read Elements
+console.log(fruits[0]);
+console.log(fruits[1]);
+console.log(fruits[2]);
+console.log(fruits[3]);
+
+/*
+case 2:
+    Read Elements from the Array using looping statement
+*/
+//declare an Array
+let fruits = []
+
+// Assign elements
+fruits[0]="Mango"
+fruits[1]="Apple"
+fruits[2]="Banana"
+fruits[3]="Orange"
+
+//Read Elements
+for(let i=0;i<fruits.length;i++){
+    console.log(fruits[i]);
+    
+}
+
+/*
+case 3:
+    Assign elements in to an Array 
+*/
+//declare an Array
+let fruits = ["Mango","Orange","Apple","Grapes"]
+
+//Read Elements
+for(let i=0;i<fruits.length;i++){
+    console.log(fruits[i]);
+    
+}
+
+/*
+case 4:
+    Read Elements from an Array in Reverse order
+*/
+//declare an Array
+let fruits = ["Mango","Orange","Apple","Grapes"]
+
+//Read Elements in Reverse order
+
+for(let i=fruits.length-1; i>=0;i--){
+    console.log(fruits[i]);
+    
+}
+
+
+/*
+case 5:
+    Read Elements from an Array using for in loop / for of loop
+*/
+//declare an Array
+let fruits = ["Mango","Orange","Apple","Grapes"]
+
+//Read Elements  using for in loop
+
+for(let x in fruits){
+    console.log(fruits[x]);
+    
+}
+
+
+//Read Elements using for of loop
+for(let y of fruits){
+    console.log(y);
+    
+}
+
+/*
+    Programatically Assign Even numbers 20 to 40 into an array
+    Read the Elements from the Array in Reverse order
+
+    Step 1: make sure we can print numbers 20 to 40
+    Step 2: from numbers 20 to 40 , display even numbers
+    Step 3: create an array and assign elements
+    Step 4: REad elements from the array in reverse order
+
+*/
+let a=[]
+let k=0;
+for(let i=20;i<=40;i++){
+    if(i % 2 ==0 ){
+        a[k]=i
+        k=k+1
+    }
+    
+}
+
+//Read Elements in Reverse Order
+for(let i=a.length-1;i>=0;i--){
+    console.log(a[i]);
+    
+}
+
+
+Inbuilt Functions in Array:
+----------------------------------------
+/*
+    Inbuilt Function - 01
+    Array In buit functiosn in JavaScript
+
+*/
+let arr=[2,4,6,8,10,12,14]
+
+// Verify whether an array contains Element 10
+let result1=arr.includes(10)
+console.log(result1);
+
+// Add new Elements in to an existing array at end
+let arr1=[2,4,6,8,10,12,14]
+arr1.push(16)
+console.log(arr1);
+
+//REmove Elements from the Array from end
+let arr2=[2,4,6,8,10,12,14]
+arr2.pop()
+console.log(arr2);
+
+//UnShift Elements, It adds elements at the beginning
+let arr3=[2,4,6,8,10,12,14]
+arr3.unshift(120)
+console.log(arr3);
+
+//shift elements at the beginning
+let arr4=[2,4,6,8,10,12,14]
+arr4.shift()
+console.log(arr4);
+
+Output:
+true
+[
+   2,  4,  6,  8,
+  10, 12, 14, 16
+]
+[ 2, 4, 6, 8, 10, 12 ]
+[
+  120,  2,  4,  6,
+    8, 10, 12, 14
+]
+[ 4, 6, 8, 10, 12, 14 ]
+
+/*
+    Inbuilt Function - 01
+    Array In buit functiosn in JavaScript
+
+*/
+let arr=[2,4,6,8,10,12,14]
+
+// Verify whether an array contains Element 10
+let result1=arr.includes(10)
+console.log(result1);
+
+// Add new Elements in to an existing array at end
+let arr1=[2,4,6,8,10,12,14]
+arr1.push(16)
+console.log(arr1);
+
+//REmove Elements from the Array from end
+let arr2=[2,4,6,8,10,12,14]
+arr2.pop()
+console.log(arr2);
+
+//UnShift Elements, It adds elements at the beginning
+let arr3=[2,4,6,8,10,12,14]
+arr3.unshift(120)
+console.log(arr3);
+
+//shift elements at the beginning
+let arr4=[2,4,6,8,10,12,14]
+arr4.shift()
+console.log(arr4);
+
+/*
+    Inbuilt Function - 02
+    Array In buit functiosn in JavaScript
+
+*/
+// concatenating the Elements in to an existing array
+let arr1=[10,8,6,12,4,14,2,7,1]
+let arr2=arr1.concat(22,33,44)
+console.log(arr2);
+
+//This function joins the Elements in an Array
+let arr3=[10,8,6,12,4,14,2,7,1]
+let v1=arr3.join(",")
+console.log(v1);
+
+
+//It provides the position of the Element from left to Right
+let s = [100,200,300,400, 500.600]
+let v2=s.indexOf(300)
+console.log(v2);
+
+//It provides the position of the Element from right to Left
+let s1 = [100,200,300,400, 500.600,300]
+let v3=s1.lastIndexOf(300)
+console.log(v3);
+
+
+/*
+    Inbuilt Function - 03
+    Array In buit functiosn in JavaScript
+
+*/
+// print eleemnts in an array in reverse order
+let a = [4,2,6,4,7,5,10,3]
+let result=a.reverse()
+console.log(result);
+
+// perform slice on Array, It provides eleemnts based on the start and end position
+let b = [4,2,6,4,7,5,10,3]
+let v1=b.slice(3,5)
+console.log(v1);
+
+//splice, it removes elements based on the range
+
+let c = [4,2,6,4,7,5,10,3]
+let v2=c.splice(3,5)
+console.log(v2);
+
+
+
+
+
+
+
+

@@ -121,3 +121,11 @@ When('I deleted the user by clicking on OK button in alert',{timeout:3*1000}, as
     })  
      await this.userpage.clickOnDeleteUserButton()
 });
+
+ When('I enter username {string} in Username text field', async function (username) {
+     await this.loginPage.setUserName(username)  
+});
+
+When('I enter password {string} in Password text field', async function (password) {
+     await this.loginPage.setPassword(password)
+});

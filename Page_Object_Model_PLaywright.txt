@@ -1,0 +1,201 @@
+Page Object Model in Playwright JavaScript:
+----------------------------------------------------------------
+First Approach:
+
+class LoginPage
+{
+    constructor(page){
+        this.page = page
+        this.userName = "//input[@placeholder='Username']"
+        this.password = "//input[@placeholder='Password']"
+        this.loginButton = "//button[normalize-space()='Login']"
+    }
+
+    async loginToApplication(){
+        await this.page.fill(this.userName, "Admin")
+        await this.page.fill(this.password, "admin123")
+        await this.page.click(this.loginButton)
+    }
+}
+
+module.exports = {LoginPage}
+
+class HomePage
+{
+    constructor(page){
+       this.page = page
+       this.userProfile = "//img[@class='oxd-userdropdown-img']"
+       this.logout ="//a[normalize-space()='Logout']"
+    }
+
+    async logoutApplication(){
+        this.page.click(this.userProfile)
+        this.page.click(this.logout)
+    }
+}
+
+module.exports = {HomePage}
+
+Writing tests by importing all class files:
+----------------------------------------------------------
+
+const {test, expect} = require('@playwright/test')
+const {LoginPage} = require('./../pages1/loginpage')
+const {HomePage} = require('./../pages1/homepage')
+test('Login and Logout using POM', async({page})=>{
+    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+
+    const loginPage = new LoginPage(page);
+    const homePage = new HomePage(page)
+    await loginPage.loginToApplication()
+    await page.waitForTimeout(4000)
+    await homePage.logoutApplication()
+    await page.waitForTimeout(2000)
+})
+
+Second Approach:
+------------------------------------
+class LoginPage
+{
+    constructor(page){
+        this.page = page
+        this.userName = "//input[@placeholder='Username']"
+        this.password = "//input[@placeholder='Password']"
+        this.loginButton = "//button[normalize-space()='Login']"
+    }
+
+    async setUserName(username){
+        await this.page.fill(this.userName, username)
+    }
+
+    async setPassword(password){
+        await this.page.fill(this.password, password)
+    }
+
+    async clickLoginButton(){
+        await this.page.click(this.loginButton)
+    }
+}
+
+module.exports = {LoginPage}
+
+class HomePage
+{
+    constructor(page){
+       this.page = page
+       this.userProfile = "//img[@class='oxd-userdropdown-img']"
+       this.logout ="//a[normalize-space()='Logout']"
+    }
+
+    async clickOnUserProfile(){
+        this.page.click(this.userProfile)
+    }
+
+    async clickOnLogoutLink(){
+          this.page.click(this.logout)
+    }
+}
+
+module.exports = {HomePage}
+
+Writing testscripts by importing all Page classes:
+----------------------------------------------------------------------
+
+const {test, expect} = require('@playwright/test')
+const {LoginPage} = require('./../pages2/loginpage')
+const {HomePage} = require('./../pages2/homepage')
+test('Login Logout using Page Object Model', async({page})=>{
+    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    //Create object or instance for Loginpage and HomePage
+    let loginPage = new LoginPage(page)
+    let homePage = new HomePage(page);
+
+    // write Tests now
+    await loginPage.setUserName("Admin")
+    await loginPage.setPassword("admin123")
+    await loginPage.clickLoginButton()
+
+    await page.waitForTimeout(4000)
+
+    await homePage.clickOnUserProfile()
+    await homePage.clickOnLogoutLink()
+
+    await page.waitForTimeout(4000)
+})
+
+
+
+Third Approach:
+-----------------------------
+
+class LoginPage
+{
+    constructor(page)
+    {
+        this.page = page;
+        this.userName = page.locator("//input[@placeholder='Username']")
+        this.password = page.locator("//input[@placeholder='Password']")
+        this.loginButton = page.locator("//button[normalize-space()='Login']")
+    }
+
+    async setUserName(username){
+        await this.userName.fill(username)
+    }
+
+    async setpassword(password){
+        await this.password.fill(password)
+    }
+
+    async clickLoginbutton(){
+        await this.loginButton.click()
+    }
+}
+
+module.exports = {LoginPage}
+
+
+
+class HomePage
+{
+    constructor(page){
+        this.page = page
+        this.userProfile = page.locator("//img[@class='oxd-userdropdown-img']")
+        this.logoutLink = page.locator("//a[normalize-space()='Logout']")
+    }
+
+    async clickUserProfile(){
+        await this.userProfile.click()
+    }
+
+    async clickLogoutLink(){
+        await this.logoutLink.click()
+    }
+}
+
+module.exports = {HomePage}
+
+
+Write testscripts by importing LoginPage and HomePage:
+---------------------------------------------------------------------------------
+const {test, expect} = require('@playwright/test')
+const {LoginPage} = require('./../pages3/loginpage')
+const {HomePage} = require('./../pages3/homepage')
+
+test('Login and Logout using Page Object Model', async({page})=>{
+    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+
+    //Create object or intance for LoginPage and HomePage
+    let loginPage = new LoginPage(page)
+    let homePage = new HomePage(page)
+    //Login Action
+    await loginPage.setUserName('Admin')
+    await loginPage.setpassword('admin123')
+    await loginPage.clickLoginbutton()
+
+    await page.waitForTimeout(4000)
+    //Logout Action
+    await homePage.clickUserProfile()
+    await homePage.clickLogoutLink()
+    await page.waitForTimeout(4000)
+})
+

@@ -1,0 +1,549 @@
+JavaScript:
+
+ProtoType:
+During run time or later stage we can add properties[variables and values] or functions into a Function or Class.
+
+case 1: Prototype at function level
+----------------------------------------------------
+
+function Customer(){
+    this.cName="Santosh"
+    this.location="Bangalore"
+}
+
+Customer.prototype.prodname="Lenovo Laptop"
+
+const o1=new Customer();
+console.log(o1.cName,o1.location, o1.prodname);
+
+const o2=new Customer();
+console.log(o2.cName,o2.location, o2.prodname);
+
+
+Case 2: Prototype at class Level [variable Level]
+-----------------------------------------------------------------------
+
+class Person
+{
+    constructor(pid,pname){
+        this.pid=pid
+        this.pname=pname
+    }
+}
+
+Person.prototype.location = "California"
+
+const o1=new Person(1, "Santosh")
+console.log(o1.pid, o1.pname, o1.location);
+
+const o2=new Person(2, "Srinivas")
+console.log(o2.pid, o2.pname, o2.location);
+
+case 3: Prototype at class Level [Function Level]
+----------------------------------------------------------------------
+
+class BasicMaths
+{
+    addition(x,y){
+        let res=(x + y)
+        console.log("Addition Result :"+res);
+        
+    }
+}
+
+BasicMaths.prototype.multiplication= function(x,y){
+                                        let result = (x * y)
+                                        console.log("Multiplication Result :"+result);
+                                        
+                                    }
+
+const o1=new BasicMaths()
+o1.addition(20,40)
+o1.multiplication(12,10)
+
+const o2=new BasicMaths()
+o2.addition(50,40)
+o2.multiplication(5,15)
+
+case 4: can we add multiple function for class using Prototype
+-------------------------------------------------------------------
+class BasicMaths
+{
+    addition(x,y){
+        let res=(x + y)
+        console.log("Addition Result :"+res);
+        
+    }
+}
+
+BasicMaths.prototype.multiplication= function(x,y){
+                                        let result = (x * y)
+                                        console.log("Multiplication Result :"+result);
+                                        
+                                    }
+
+BasicMaths.prototype.substraction = (x,y) =>{
+                                        let result = (x - y)
+                                        console.log("Substraction Result :"+result);
+                                    }
+
+const o1=new BasicMaths()
+o1.addition(20,40)
+o1.multiplication(12,10)
+o1.substraction(90,40)
+
+const o2=new BasicMaths()
+o2.addition(50,40)
+o2.multiplication(5,15)
+o2.substraction(40,15)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Higher Order Functions :
+
+A function accepts a function as a parameter and it returns a function, this type of functions are called Higher Order Functions
+
+Snippet:
+----------------
+function aa(){
+    console.log("Welcome to Playwright")
+}
+
+function bb(aa()) {
+      return aa()
+}
+
+Before Applying the Higher Order Function Concept:
+--------------------------------------------------------------------------
+const radius = [2,4,1,6,5,8,10,7]
+
+const calculateArea = function(radius){
+    let result = []
+    for(let i=0;i<radius.length;i++){
+        result.push (Math.PI * radius[i] * radius[i])
+    }
+    return result
+}
+
+console.log(calculateArea(radius));
+
+const calculateCircumference=function(radius){
+    let result = []
+    for(let i=0;i<radius.length;i++){
+        result.push (2 * Math.PI * radius[i])
+    }
+    return result
+}
+
+console.log(calculateCircumference(radius));
+
+const calculateDiameter = function (radius){
+    let result = []
+    for(let i=0;i<radius.length;i++){
+        result.push(2 * radius[i])
+    }
+    return result
+}
+console.log(calculateDiameter(radius));
+
+After Applying the Higher Order Function Concept:
+--------------------------------------------------------------------------
+const radius = [2,4,1,6,5,8,10,7]
+
+
+const area = function(radius){
+    return (Math.PI * radius * radius)
+}
+
+const circomference =function(radius){
+    return (2 * Math.PI * radius)
+}
+
+const diameter = function(radius){
+    return (2 * radius)
+}
+
+const calculate = function(radius, logic){
+    let result = []
+    for(let i=0;i<radius.length;i++){
+        result.push (logic(radius[i]))
+    }
+    return result
+}
+
+console.log(calculate(radius, area));
+console.log(calculate(radius, circomference));
+console.log(calculate(radius, diameter));
+
+User defined Higher Order Function:
+------------------------------------------------------
+const radius = [2,4,1,6,5,8,10,7]
+
+
+const area = function(radius){
+    return (Math.PI * radius * radius)
+}
+
+const circomference =function(radius){
+    return (2 * Math.PI * radius)
+}
+
+const diameter = function(radius){
+    return (2 * radius)
+}
+
+Array.prototype.calculate = function(logic){
+    let result = []
+    for(let i=0;i<this.length;i++){
+        result.push (logic(this[i]))
+    }
+    return result
+}
+
+const circlearea= radius.calculate(area)
+console.log(circlearea);
+
+const circlecircumference=radius.calculate(circomference)
+console.log(circlecircumference);
+
+const circlediameter=radius.calculate(diameter)
+console.log(circlediameter);
+console.log("---------------------------------------");
+const output1=radius.map(area)
+console.log(output1);
+
+const output2 = radius.map(circomference)
+console.log(output2);
+
+const output = radius.map(diameter)
+console.log(output);
+
+Sample Example in Array to convert into Higher Order function:
+----------------------------------------------------------------------------------------------
+Before Converting Higher order function:
+
+const arr = [2,4,6,8,10,12]
+
+const readfirstHalf = function(arr){
+
+    for(let i=0;i<arr.length/2;i++){
+        console.log(arr[i]);
+    }
+}
+
+readfirstHalf(arr);
+console.log("-----------------------------------");
+
+const readSecondHalf = function(arr){
+
+    for(let i=arr.length/2;i<arr.length;i++){
+        console.log(arr[i]);
+    }
+}
+
+readSecondHalf(arr)
+console.log("-----------------------------------");
+
+const readReverse = function(arr){
+    for(let i=arr.length-1;i>=0;i--){
+        console.log(arr[i]);
+        
+    }
+}
+
+readReverse(arr)
+
+After Converting Higher Order Function:
+----------------------------------------------------------
+
+const arr = [2,4,6,8,10,12]
+
+const readfirstHalf = function(arr){
+    let result =[]
+    for(let i=0;i<arr.length/2;i++){
+        result.push(arr[i]);
+    }
+    return result
+}
+
+console.log("-----------------------------------");
+
+const readSecondHalf = function(arr){
+    let result =[]
+    for(let i=arr.length/2;i<arr.length;i++){
+        result.push(arr[i]);
+    }
+    return result
+}
+
+
+console.log("-----------------------------------");
+
+const readReverse = function(arr){
+    let result =[]
+    for(let i=arr.length-1;i>=0;i--){
+        result.push(arr[i]);
+        
+    }
+    return result
+}
+
+
+Array.prototype.readElements = function (logic){
+    return logic(this)
+}
+
+const output1 = arr.readElements(readfirstHalf)
+console.log(output1);
+
+const output2 = arr.readElements(readSecondHalf)
+console.log(output2);
+
+const output3 = arr.readElements(readReverse)
+console.log(output3);
+
+
+
+Explore Map, filter and Reduce Functions :
+----------------------------------------------------------------
+
+map function examples:
+-----------------------------------
+
+/*
+    Explore map function
+    map function provides the transformation of an array
+*/
+const arr = [2,7,9,4,8,5]
+
+const double = function(arr){
+    return (2 * arr)
+}
+
+
+const resultdouble=arr.map(double)
+console.log(resultdouble);
+
+console.log("-----------------------------------------");
+const triple = function (arr){
+    return (3 * arr)
+}
+
+const resulttriple=arr.map(triple)
+console.log(resulttriple);
+console.log("-----------------------------------------");
+const binary = function(arr){
+    return (arr.toString(2))
+}
+
+const resultbinary = arr.map(binary)
+console.log(resultbinary);
+console.log("-----------------------------------------");
+
+let resultmultiply10=arr.map(function(x){
+    return (x * 10)
+})
+
+console.log(resultmultiply10);
+
+console.log("-----------------------------------------");
+
+let resultmultiply5=arr.map((x) =>{
+    return (x * 5)
+})
+
+console.log(resultmultiply5);
+
+filter function examples:
+---------------------------------------
+
+/*
+    Explore filter function
+    filter function filters the given array of elements
+*/
+const arr = [2,7,9,4,8,5]
+
+//display Even number Elements
+const evenNumbers= arr.filter((x) =>{
+    if(x % 2==0){
+        return x
+    }
+})
+
+console.log(evenNumbers);
+//display odd number Elements
+const oddNumbers = arr.filter((x)=>{
+    if(x % 2==1){
+        return x
+    }
+})
+
+console.log(oddNumbers);
+//display numbers which are less than 5
+const lessThan5=arr.filter((x) =>{
+    if(x <5){
+        return x
+    }
+})
+
+console.log(lessThan5);
+
+reduce function examples:
+--------------------------------------
+reduce Example 1:
+
+/*
+    Explore Reduce function
+    reduce function provides consolidated result
+*/
+
+const arr = [2,7,9,4,8,5]
+
+const sumresult=function(arr){
+    let sum=0
+    for(let i=0;i<arr.length;i++){
+        sum=sum+arr[i]
+    }
+    return sum
+}
+
+console.log(sumresult(arr));
+
+console.log("----------------------------------");
+const sumresultnew = arr.reduce(function(acc,curr){
+    return acc=acc+curr
+},0)
+
+console.log(sumresultnew);
+
+
+
+reduce Example 2:
+--------------------------
+/*
+    Explore Reduce function
+    reduce function provides consolidated result
+*/
+
+const arr = [2,7,9,4,8,5]
+
+const maxelement = function(arr){
+    let max=0
+    for(let i=0;i<arr.length;i++){
+        if(arr[i] > max){
+            max= arr[i]
+        }
+    }
+    return max
+}
+
+console.log(maxelement(arr));
+console.log("----------------------------------");
+const maxelementnew = arr.reduce(function(acc,curr){
+    if(curr > acc){
+        acc=curr
+    }
+    return acc
+},0)
+
+console.log(maxelementnew);
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+map, filter and reduce function :
+-----------------------------------------------
+
+examples on map function on javascript object level:
+
+/*
+   map function on javascript array of object
+*/
+
+const employees = [
+    {empno:11, ename:"Santosh", jobname:"Manager",salary:25000,age:22 },
+    {empno:12, ename:"Vinith", jobname:"Analyst",salary:15000,age:25 },
+    {empno:13, ename:"Srinivas", jobname:"Clerk",salary:10000,age:26 },
+    {empno:14, ename:"Rohit", jobname:"Analyst",salary:17000,age:26 }
+]
+
+const employeesnames = employees.map((x) =>{
+    return (x.ename)
+})
+
+console.log(employeesnames);
+console.log("--------------------------------------------");
+
+const nameandjob= employees.map((x) =>{
+    return ("Employee Name is "+x.ename+" and working as "+x.jobname)
+})
+
+console.log(nameandjob);
+
+
+
+examples on filter function on javascript level:
+/*
+   filter function on javascript array of object
+*/
+
+const employees = [
+    {empno:11, ename:"Santosh", jobname:"Manager",salary:25000,age:22 },
+    {empno:12, ename:"Vinith", jobname:"Analyst",salary:15000,age:25 },
+    {empno:13, ename:"Srinivas", jobname:"Clerk",salary:10000,age:26 },
+    {empno:14, ename:"Rohit", jobname:"Analyst",salary:17000,age:26 }
+]
+
+const names = employees.filter((x) =>{
+    if(x.age ===26){
+        return (x)
+    }
+}).map((y) =>{
+    return (y.ename)
+})
+
+console.log(names);
+
+
+examples on reduce on javascript object:
+-----------------------------------------------------------
+/*
+   reduce function on javascript array of object
+*/
+
+const employees = [
+    {empno:11, ename:"Santosh", jobname:"Manager",salary:25000,age:22 },
+    {empno:12, ename:"Vinith", jobname:"Analyst",salary:15000,age:25 },
+    {empno:13, ename:"Srinivas", jobname:"Clerk",salary:10000,age:26 },
+    {empno:14, ename:"Rohit", jobname:"Analyst",salary:17000,age:26 }
+]
+
+// {26:2, 25:1, 22: 1}
+
+// { Analyst: 2, Manager: 1, Clerk: 1}
+
+const result = employees.reduce(function(acc, curr){
+    if(acc[curr.age]){
+        acc[curr.age] = ++ acc[curr.age]
+    }else{
+        acc[curr.age] =1
+    }
+    return acc
+},{})
+
+console.log(result);
+
+console.log("-------------------------------------------");
+const resultjob = employees.reduce(function(acc, curr){
+    if(acc[curr.jobname]){
+        acc[curr.jobname] = ++ acc[curr.jobname]
+    }else{
+        acc[curr.jobname] =1
+    }
+    return acc
+},{})
+
+console.log(resultjob);
+
+
+
+
+
+

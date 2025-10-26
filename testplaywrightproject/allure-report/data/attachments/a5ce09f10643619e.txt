@@ -1,0 +1,2 @@
+Sum of Prices of All Products from Products API
+Total of Price of All Products :3240.9199999999987

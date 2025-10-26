@@ -1,0 +1,368 @@
+Functions in JavaScript:
+----------------------
+suppose we have 200 lines of code, among them there are 4 lines of code has repeated more than 4 times, instead of copy pasting those lines again and again, we have to write a write a function and call that function where ever it is required.
+
+Syntax:
+
+function functionName1(parameters){
+      <statements>;
+}
+
+In JavaScript functions can be classified as
+1. Functions which do not return value
+2. Functions which return value
+
+1. Functions which do not return value:
+these kind of functions never use return keyword in the body of the function.
+
+/*
+    Functions which do not return value:
+    traditional Function
+*/
+
+function findFactorial(number){
+    let fact=1
+    for(let i=number;i>=1;i--){
+        fact=fact * i
+    }
+    console.log("The Factorial of "+number+" is "+fact);  
+}
+findFactorial(5)
+
+/*
+    Functions which do not return value:
+    anonymous Function
+*/
+let findFactorial2=function (number){
+    let fact=1
+    for(let i=number;i>=1;i--){
+        fact=fact * i
+    }
+    console.log("The Factorial of "+number+" is "+fact);  
+}
+findFactorial2(6)
+
+/*
+    Functions which do not return value:
+    Array Function
+*/
+
+let findFactorial3=(number)=>{
+    let fact=1
+    for(let i=number;i>=1;i--){
+        fact=fact * i
+    }
+    console.log("The Factorial of "+number+" is "+fact);  
+}
+findFactorial3(7)
+----------------------------------------------------------------------------------------
+/*
+    find the sum of all elements from the given integer array
+    Step 1: Traditional Function
+*/
+function findSumOfElements1(arr){
+    let sum=0;
+    for(let i=0;i<arr.length;i++){
+        sum=sum+arr[i]
+    }
+    console.log("sum of All Elements :"+sum);
+    
+}
+let a=[10,20,30,40,50]
+findSumOfElements1(a)
+
+/*
+    find the sum of all elements from the given integer array
+    Step 1: Ananymous Function
+*/
+let findSumOfElements2=function (arr){
+    let sum=0;
+    for(let i=0;i<arr.length;i++){
+        sum=sum+arr[i]
+    }
+    console.log("sum of All Elements :"+sum);
+    
+}
+let b=[10,20,30,40,50,60]
+findSumOfElements2(b)
+
+/*
+    find the sum of all elements from the given integer array
+    Step 1: Ananymous Function
+*/
+let findSumOfElements3= (arr)=>{
+    let sum=0;
+    for(let i=0;i<arr.length;i++){
+        sum=sum+arr[i]
+    }
+    console.log("sum of All Elements :"+sum);
+    
+}
+let c=[10,20,30,40,50,60,70]
+findSumOfElements3(c)
+
+--------------------------------------------------------------------------------------
+/*
+     Concatenate all the Elements from the string Array
+     Traditional Function
+*/
+function concateStringElements1(str){
+    let result=""
+   for(let i=0;i<str.length;i++){
+     result=result+str[i]+" "
+   }
+   console.log(result);
+   
+}
+
+let s=["Lotus","Tulip","Cosmos","sunflower"]
+concateStringElements1(s)
+
+/*
+     Concatenate all the Elements from the string Array
+     ananymous Function
+*/
+let concateStringElements2 = function (str){
+    let result=""
+   for(let i=0;i<str.length;i++){
+     result=result+str[i]+" "
+   }
+   console.log(result);
+   
+}
+
+let s1=["Lotus","Tulip","Cosmos","sunflower"]
+concateStringElements2(s1)
+
+/*
+     Concatenate all the Elements from the string Array
+     Arrow Function
+*/
+let concateStringElements3 = function (str){
+    let result=""
+   for(let i=0;i<str.length;i++){
+     result=result+str[i]+" "
+   }
+   console.log(result);
+   
+}
+
+let s2=["Lotus","Tulip","Cosmos","sunflower"]
+concateStringElements3(s2)
+
+-----------------------------------------------------------------------------
+2. Functions which return value:
+
+This kind of function contains return keyword in the body of the function and these functions return value, in JavaScript function can return only one value at a time.
+
+Syntax:
+function functionName(parameters){
+     <Statements>;
+     return value;
+}
+
+Example1:
+Write a function, it return your city Name?
+function getCityName(){
+    return "California"
+}
+
+let x=getCityName()
+console.log(x);
+
+Example 2:
+Write a function, It should return count of numbers in between any range and which are divisiable by 3?
+
+function getCountOfNumbers(start, end){
+    let count=0
+    if(start>end){
+            return 0;
+        }
+    for(let i=start;i<=end;i++)
+    {
+        if(i % 3 ==0){
+            count=count+ 1
+        }
+    }
+
+    return count;
+}
+
+let result=getCountOfNumbers(10,50)
+console.log(result);
+
+
+/*
+    Write a function , It should return odd numbers 31 to 61
+    TRaditional Function
+*/
+
+function getOddNumbers1(){
+    let odd=[]
+    for(let i=31;i<=61;i++){
+        if(i % 2 ==1){
+            odd.push(i)
+        }
+    }
+    return odd;
+}
+
+let arr1=getOddNumbers1()
+for(let x1 of arr1){
+    console.log(x1);
+    
+}
+console.log("----------------------------------------------");
+
+
+/*
+    Write a function , It should return odd numbers 31 to 61
+    Ananymous Function
+*/
+
+let getOddNumbers2=function (){
+    let odd=[]
+    for(let i=31;i<=61;i++){
+        if(i % 2 ==1){
+            odd.push(i)
+        }
+    }
+    return odd;
+}
+
+let arr2=getOddNumbers2()
+for(let x1 of arr2){
+    console.log(x1);
+    
+}
+console.log("----------------------------------------------");
+/*
+    Write a function , It should return odd numbers 31 to 61
+    Arrow  Function
+*/
+
+let getOddNumbers3= ()=>{
+    let odd=[]
+    for(let i=31;i<=61;i++){
+        if(i % 2 ==1){
+            odd.push(i)
+        }
+    }
+    return odd;
+}
+
+let arr3=getOddNumbers2()
+for(let x1 of arr3){
+    console.log(x1);
+    
+}
+
+What is purpose of return value from Function:
+------------------------------------------------------------------
+
+/*
+    Verify the given numebr is prime or not
+*/
+
+let isPrime =(number)=>{
+    let flag=0
+    for(let i=2;i<number;i++){
+        if(number % i ==0){
+            flag=flag +1
+            break;
+        }
+    }
+    if(flag==0){
+        return true
+    }else{
+        return false
+    }
+}
+
+//First Approach
+let v1=isPrime(115)
+console.log(v1);
+console.log("----------------------------------------------");
+//Second Approach, print prime numbers in between 1 to 50
+for(let i=1;i<=50;i++){
+    if(isPrime(i)==true){
+        console.log(i);
+        
+    }
+}
+console.log("----------------------------------------------");
+// Third Approach, find sum of all prime nulbers in between 1 to 30
+let sum=0
+for(let i=1;i<=30;i++){
+    if(isPrime(i)==true){
+        sum=sum+i
+        
+    } 
+}
+console.log("sum of Prime Numbers :"+sum);
+console.log("----------------------------------------------");
+// Fourth Approach, find count of all prime nulbers in between 50 to 100
+let count=0
+for(let i=50;i<=100;i++){
+    if(isPrime(i)==true){
+        count+=1
+        
+    } 
+}
+console.log("Count of Prime Numbers :"+count);
+
+
+Case 1: The return value of a function , we can use as parameter to another function
+
+/*
+    Case 1: The return value of a function , we can use as parameter to another function
+
+*/
+
+function add1(x, y){
+    return (x + y);
+}
+
+function sub1(x, y){
+    let result= (x - y);
+    return result
+}
+
+function multiplication(x, y){
+    let result=(x * y)
+    console.log("Multiplication Result :"+result);
+    
+}
+
+// First Approach, how to use return value
+let a=add1(2,8)
+let b=sub1(10,5)
+multiplication(a,b)
+// Second Approach, how to use return value
+multiplication(add1(4,11), sub1(25,19))
+
+Case 2: The return value of a function, can be used within the body another function
+
+/*
+   Case 2: The return value of a function, can be used within the body another function
+*/
+
+function add1(x, y){
+    return (x + y);
+}
+
+function sub1(x, y){
+    let result= (x - y);
+    return result
+}
+
+function multiplication(){
+    let a=add1(20,5)
+    let b=sub1(45,40)
+    let result=(a * b)
+    console.log("Multiplication Result:"+result)
+}
+
+multiplication()
+
+

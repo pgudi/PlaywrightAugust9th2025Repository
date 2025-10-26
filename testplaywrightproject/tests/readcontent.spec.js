@@ -17,7 +17,7 @@ test('Read content from Array of JSON File', async ({page})=>{
     }
 })
 
-test.only('Read content from Nested Json Object File', async({page})=>{
+test('Read content from Nested Json Object File', async({page})=>{
     console.log("first Name :"+testdata3.user1.fname);
     console.log("Course Name :"+testdata3.user1.course);
 

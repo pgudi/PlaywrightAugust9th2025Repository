@@ -1,5 +1,5 @@
 const {test, expect} = require("@playwright/test")
-test.use({viewport:{width:1536, height:864}})
+// test.use({viewport:{width:1536, height:864}})
 test("Create User TestScript", async({page})=>{
     await page.goto("http://localhost/login.do")
     await expect(page).toHaveTitle("actiTIME - Login")
